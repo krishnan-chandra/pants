@@ -5,6 +5,14 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
+"@the-company/project@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@the-company/project@workspace:."
+  dependencies:
+    cowsay: "npm:^1.6.0"
+  languageName: unknown
+  linkType: soft
+
 "ansi-regex@npm:^3.0.0":
   version: 3.0.1
   resolution: "ansi-regex@npm:3.0.1"
@@ -183,14 +191,6 @@ __metadata:
   checksum: 10c0/db91467d9ead311b4111cbd73a4e67fa7820daed2989a32f7023785a2659008c6d119752d9c4ac011ae07e537eb86523adff99804c5fdb39cd3a017f9b401bb6
   languageName: node
   linkType: hard
-
-"root-workspace-0b6124@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root-workspace-0b6124@workspace:."
-  dependencies:
-    cowsay: "npm:^1.6.0"
-  languageName: unknown
-  linkType: soft
 
 "set-blocking@npm:^2.0.0":
   version: 2.0.0
