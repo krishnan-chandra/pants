@@ -80,6 +80,7 @@ def test_parses_projects(rule_runner: RuleRunner) -> None:
         ("yarn@1.22.19", ("install", "--frozen-lockfile")),
         ("yarn@2.4.3", ("install", "--immutable")),
         ("yarn@3.6.4", ("install", "--immutable")),
+        ("yarn@4.3.1", ("install", "--immutable")),
     ],
 )
 def test_immutable_install_args_property(
