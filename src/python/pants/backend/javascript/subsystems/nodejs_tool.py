@@ -6,6 +6,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import ClassVar, Iterable, Mapping
 
+import nodesemver
+
 from pants.backend.javascript import install_node_package, nodejs_project_environment
 from pants.backend.javascript.install_node_package import (
     InstalledNodePackage,
@@ -153,7 +155,7 @@ async def _run_tool_with_resolve(request: NodeJSToolRequest, resolve: str) -> Pr
     execute_args = {
         "npm": ("exec", "--no", "--"),
         "pnpm": ("exec",),
-        "yarn": ("--silent", "exec", "--"),
+        "yarn": ("--silent", "exec", "--") if nodesemver.satisfies(project.package_manager_version, "1.x") else ("exec", "--"),
     }
     request_tool_without_version = request.tool.partition("@")[0]
     return await Get(
