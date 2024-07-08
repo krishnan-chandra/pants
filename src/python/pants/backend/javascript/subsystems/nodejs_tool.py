@@ -155,7 +155,9 @@ async def _run_tool_with_resolve(request: NodeJSToolRequest, resolve: str) -> Pr
     execute_args = {
         "npm": ("exec", "--no", "--"),
         "pnpm": ("exec",),
-        "yarn": ("--silent", "exec", "--") if nodesemver.satisfies(project.package_manager_version, "1.x") else ("exec", "--"),
+        "yarn": ("--silent", "exec", "--")
+        if nodesemver.satisfies(project.package_manager_version, "1.x")
+        else ("exec", "--"),
     }
     request_tool_without_version = request.tool.partition("@")[0]
     return await Get(
