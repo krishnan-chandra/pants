@@ -84,6 +84,7 @@ def test_execute_process_with_package_manager(
 @pytest.mark.parametrize(
     "package_manager, version",
     [
+        pytest.param("yarn", "1.22.22", id="yarn-v1"),
         pytest.param("yarn", "4.3.1", id="yarn"),
         pytest.param("npm", "10.8.1", id="npm"),
         pytest.param("pnpm", "9.5.0", id="pnpm"),
