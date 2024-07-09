@@ -159,6 +159,9 @@ async def _run_tool_with_resolve(request: NodeJSToolRequest, resolve: str) -> Pr
         if nodesemver.satisfies(project.package_manager_version, "1.x")
         else ("exec", "--"),
     }
+    print("Execution args are: ", execute_args)
+    print("Package manager is: ", project.package_manager)
+    print("Package manager version is: ", project.package_manager_version)
     request_tool_without_version = request.tool.partition("@")[0]
     return await Get(
         Process,
