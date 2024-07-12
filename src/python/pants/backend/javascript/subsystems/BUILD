@@ -11,4 +11,7 @@ python_tests(
     },
 )
 
-resources(name="cowsay_lockfiles", sources=["package-lock.json", "pnpm-lock.yaml", "yarn.lock", "yarn-v1.lock"])
+resources(
+    name="cowsay_lockfiles",
+    sources=["package-lock.json", "pnpm-lock.yaml", "yarn.lock", "yarn-v1.lock"],
+)
